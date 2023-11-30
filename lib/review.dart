@@ -30,7 +30,7 @@ class _ReviewState extends State<Review> {
               '245 Reviews',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),Row(children: [
-              Text('sdfghjdcvb')
+             Icon(Icons.abc)
             ],)
           ],
         ),
