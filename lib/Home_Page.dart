@@ -1,22 +1,35 @@
-import 'package:ecommersapp/constence/widget.dart';
-import 'package:ecommersapp/view/brandsee.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ECommersIntrfce extends StatefulWidget {
-  const ECommersIntrfce({super.key});
+class Homepage extends StatefulWidget {
+  const Homepage({super.key});
 
   @override
-  State<ECommersIntrfce> createState() => _ECommersIntrfceState();
+  State<Homepage> createState() => _HomepageState();
 }
 
 // ignore: prefer_typing_uninitialized_variables
 var orientation, size, height, width;
 
-class _ECommersIntrfceState extends State<ECommersIntrfce> {
-  int selectinxd = 0;
+class _HomepageState extends State<Homepage> {
+   int selectinxd = 0;
   bool showbutton = false;
   @override
   Widget build(BuildContext context) {
+    final List<Image> Brandlist = [
+      Image.asset('assets/Adidas.png'),
+      Image.asset('assets/nake.png'),
+      Image.asset('assets/fila-9 1.png'),
+      Image.asset('assets/Reebok_logo_PNG6.png'),
+      
+    ];
+    final List<String> Brandlist1 = [
+      "Adidas",
+      'Nike',
+      'Fila',
+      "Reebok",
+     
+    ];
     orientation = MediaQuery.of(context).orientation;
     size = MediaQuery.of(context).size;
     height = size.height;
@@ -29,11 +42,11 @@ class _ECommersIntrfceState extends State<ECommersIntrfce> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: Image.asset(
-          "assets/Menu (2).png",
+          "assets/menu.png",
           height: 30,
           width: 30,
         ),
-        actions: [Image.asset("assets/Cart.png")],
+        actions: [Image.asset("Cart.png")],
       ),
       body: Column(children: [
         const Row(
@@ -127,21 +140,21 @@ class _ECommersIntrfceState extends State<ECommersIntrfce> {
                   fontSize: 20,
                   fontWeight: FontWeight.w600),
             ),
-            SizedBox(
-              width: width / 2.4,
-            ),
-            TextButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => brandsee(),
-                      ));
-                },
-                child: const Text(
-                  'View All',
-                  style: TextStyle(color: Colors.black45, fontSize: 15),
-                )),
+            // SizedBox(
+            //   width: width / 2.4,
+            // ),
+            // TextButton(
+            //     onPressed: () {
+            //       Navigator.push(
+            //           context,
+            //           MaterialPageRoute(
+            //             builder: (context) => brandsee(),
+            //           ));
+            //     },
+            //     child: const Text(
+            //       'View All',
+            //       style: TextStyle(color: Colors.black45, fontSize: 15),
+            //     )),
           ],
         ),
         Row(
@@ -153,6 +166,7 @@ class _ECommersIntrfceState extends State<ECommersIntrfce> {
               height: height / 13,
               width: width / 1.09,
               child: ListView.separated(
+                
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     return Container(
@@ -167,19 +181,18 @@ class _ECommersIntrfceState extends State<ECommersIntrfce> {
                             width: width / 60,
                           ),
                           Container(
-                            height: height / 15,
-                            width: width / 8,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Image.asset(brandlist[index].image),
-                          ),
+                              height: height / 15,
+                              width: width / 8,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Brandlist[index]),
                           SizedBox(
                             width: width / 60,
                           ),
                           Center(
                               child: Text(
-                            brandlist[index].text,
+                            Brandlist1[index],
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 18,
@@ -230,7 +243,7 @@ class _ECommersIntrfceState extends State<ECommersIntrfce> {
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: width * 0.5,
               childAspectRatio: 0.8,
-              crossAxisSpacing: 8,
+              crossAxisSpacing: 7,
               mainAxisSpacing: 8),
           itemCount: 10,
           itemBuilder: (context, index) {
@@ -240,7 +253,7 @@ class _ECommersIntrfceState extends State<ECommersIntrfce> {
                   height: 3,
                 ),
                 Container(
-                  height: height / 4.2,
+                  height: height / 4.35,
                   width: width / 2.5,
                   decoration: BoxDecoration(
                       color: Color.fromARGB(255, 228, 234, 238),
@@ -254,7 +267,7 @@ class _ECommersIntrfceState extends State<ECommersIntrfce> {
                         "cloth name,brand",
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 14,
+                            fontSize: 13,
                             fontWeight: FontWeight.w600),
                       ),
                       Padding(
@@ -263,7 +276,7 @@ class _ECommersIntrfceState extends State<ECommersIntrfce> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 15,
-                                fontWeight: FontWeight.bold)),
+                                fontWeight: FontWeight.w800)),
                       ),
                     ],
                   ),
@@ -273,27 +286,35 @@ class _ECommersIntrfceState extends State<ECommersIntrfce> {
           },
         ))
       ]),
+     
       bottomNavigationBar: BottomNavigationBar(
         useLegacyColorScheme: false,
-        fixedColor:Color.fromARGB(255, 255, 137, 2)  ,
-        backgroundColor: Color.fromARGB(255, 255, 137, 2) , items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home, color: Colors.black,), label: 'Home',),
+        fixedColor: Color.fromARGB(255, 255, 137, 2),
+        backgroundColor: Color.fromARGB(255, 255, 137, 2),
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
+            label: 'Home',
+          ),
           BottomNavigationBarItem(
               icon: Image.asset('Vector.png'), label: 'Fevourite'),
           BottomNavigationBarItem(
-              icon: Image.asset('assets/cart .png'), label: 'Cart'),
+              icon: Image.asset('assets/cart (1).png'), label: 'Cart'),
           BottomNavigationBarItem(
-              icon: Image.asset('assets/Vector (2).png'), label: 'Payment'),
+              icon: Image.asset('assets/payment.png'), label:'Payment'),
         ],
         currentIndex: selectinxd,
         onTap: (index) {
           setState(() {
             selectinxd = index;
             showbutton = index == 0;
+            
           });
         },
-      ),
+       ),
     ));
   }
 }
-
