@@ -46,7 +46,7 @@ class _HomepageState extends State<Homepage> {
           height: 30,
           width: 30,
         ),
-        actions: [Image.asset("Cart.png")],
+        actions: [Image.asset("assets/Cart.png")],
       ),
       body: Column(children: [
         const Row(
@@ -258,6 +258,7 @@ class _HomepageState extends State<Homepage> {
                   decoration: BoxDecoration(
                       color: Color.fromARGB(255, 228, 234, 238),
                       borderRadius: BorderRadius.circular(15)),
+                      child:Row(children: [Image.asset("assets/Vector.png")],)
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 30),
@@ -300,7 +301,7 @@ class _HomepageState extends State<Homepage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-              icon: Image.asset('Vector.png'), label: 'Fevourite'),
+              icon: Image.asset('assets/Vector.png'), label: 'Fevourite'),
           BottomNavigationBarItem(
               icon: Image.asset('assets/cart (1).png'), label: 'Cart'),
           BottomNavigationBarItem(
