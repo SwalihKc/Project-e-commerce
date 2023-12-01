@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
@@ -12,8 +12,10 @@ class Homepage extends StatefulWidget {
 var orientation, size, height, width;
 
 class _HomepageState extends State<Homepage> {
-   int selectinxd = 0;
+  int selectinxd = 0;
   bool showbutton = false;
+  bool isLiked = false;
+  int likeCount = 0;
   @override
   Widget build(BuildContext context) {
     final List<Image> Brandlist = [
@@ -21,14 +23,12 @@ class _HomepageState extends State<Homepage> {
       Image.asset('assets/nake.png'),
       Image.asset('assets/fila-9 1.png'),
       Image.asset('assets/Reebok_logo_PNG6.png'),
-      
     ];
     final List<String> Brandlist1 = [
       "Adidas",
       'Nike',
       'Fila',
       "Reebok",
-     
     ];
     orientation = MediaQuery.of(context).orientation;
     size = MediaQuery.of(context).size;
@@ -166,7 +166,6 @@ class _HomepageState extends State<Homepage> {
               height: height / 13,
               width: width / 1.09,
               child: ListView.separated(
-                
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     return Container(
@@ -253,13 +252,32 @@ class _HomepageState extends State<Homepage> {
                   height: 3,
                 ),
                 Container(
-                  height: height / 4.35,
-                  width: width / 2.5,
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 228, 234, 238),
-                      borderRadius: BorderRadius.circular(15)),
-                      child:Row(children: [Image.asset("assets/Vector.png")],)
-                ),
+                    height: height / 4.35,
+                    width: width / 2.5,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 228, 234, 238),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding:
+                              const EdgeInsets.only(left: 100, bottom: 138),
+                          child:IconButton(
+          icon: Icon(
+            isLiked ? Icons.favorite : Icons.favorite_border,
+            color: Colors.red,
+          ),
+          onPressed: () {
+            // Toggle the like state and update the like count
+            setState(() {
+              isLiked = !isLiked;
+              likeCount += isLiked ? 1 : -1;
+            });
+          },
+        ),
+                        )
+                      ],
+                    )),
                 Padding(
                   padding: const EdgeInsets.only(right: 30),
                   child: Column(
@@ -287,7 +305,6 @@ class _HomepageState extends State<Homepage> {
           },
         ))
       ]),
-     
       bottomNavigationBar: BottomNavigationBar(
         useLegacyColorScheme: false,
         fixedColor: Color.fromARGB(255, 255, 137, 2),
@@ -305,17 +322,16 @@ class _HomepageState extends State<Homepage> {
           BottomNavigationBarItem(
               icon: Image.asset('assets/cart (1).png'), label: 'Cart'),
           BottomNavigationBarItem(
-              icon: Image.asset('assets/payment.png'), label:'Payment'),
+              icon: Image.asset('assets/payment.png'), label: 'Payment'),
         ],
         currentIndex: selectinxd,
         onTap: (index) {
           setState(() {
             selectinxd = index;
             showbutton = index == 0;
-            
           });
         },
-       ),
+      ),
     ));
   }
 }
