@@ -1,3 +1,4 @@
+// ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
 
@@ -18,12 +19,14 @@ class _HomepageState extends State<Homepage> {
   int likeCount = 0;
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     final List<Image> Brandlist = [
       Image.asset('assets/Adidas.png'),
       Image.asset('assets/nake.png'),
       Image.asset('assets/fila-9 1.png'),
       Image.asset('assets/Reebok_logo_PNG6.png'),
     ];
+    // ignore: non_constant_identifier_names
     final List<String> Brandlist1 = [
       "Adidas",
       'Nike',
@@ -74,7 +77,7 @@ class _HomepageState extends State<Homepage> {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 7,
         ),
         Row(
@@ -128,7 +131,7 @@ class _HomepageState extends State<Homepage> {
             )
           ],
         ),
-        Row(
+        const Row(
           children: [
             SizedBox(
               width: 10,
@@ -159,7 +162,7 @@ class _HomepageState extends State<Homepage> {
         ),
         Row(
           children: [
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SizedBox(
@@ -172,7 +175,7 @@ class _HomepageState extends State<Homepage> {
                       height: height / 13,
                       width: width / 3,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 228, 234, 238),
+                          color: const Color.fromARGB(255, 228, 234, 238),
                           borderRadius: BorderRadius.circular(15)),
                       child: Row(
                         children: [
@@ -192,7 +195,7 @@ class _HomepageState extends State<Homepage> {
                           Center(
                               child: Text(
                             Brandlist1[index],
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600),
@@ -208,17 +211,17 @@ class _HomepageState extends State<Homepage> {
                   },
                   itemCount: 4),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             )
           ],
         ),
         Row(
           children: [
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
-            Text(
+            const Text(
               "New Arraival",
               style: TextStyle(
                   color: Colors.black,
@@ -248,14 +251,14 @@ class _HomepageState extends State<Homepage> {
           itemBuilder: (context, index) {
             return Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 3,
                 ),
                 Container(
                     height: height / 4.35,
                     width: width / 2.5,
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 228, 234, 238),
+                        color: const Color.fromARGB(255, 228, 234, 238),
                         borderRadius: BorderRadius.circular(15)),
                     child: Row(
                       children: [
@@ -278,8 +281,8 @@ class _HomepageState extends State<Homepage> {
                         )
                       ],
                     )),
-                Padding(
-                  padding: const EdgeInsets.only(right: 30),
+                const Padding(
+                  padding: EdgeInsets.only(right: 30),
                   child: Column(
                     children: [
                       Text(
@@ -290,7 +293,7 @@ class _HomepageState extends State<Homepage> {
                             fontWeight: FontWeight.w600),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 50),
+                        padding: EdgeInsets.only(right: 50),
                         child: Text('\$900',
                             style: TextStyle(
                                 color: Colors.black,
@@ -307,10 +310,10 @@ class _HomepageState extends State<Homepage> {
       ]),
       bottomNavigationBar: BottomNavigationBar(
         useLegacyColorScheme: false,
-        fixedColor: Color.fromARGB(255, 255, 137, 2),
-        backgroundColor: Color.fromARGB(255, 255, 137, 2),
+        fixedColor: const Color.fromARGB(255, 255, 137, 2),
+        backgroundColor: const Color.fromARGB(255, 255, 137, 2),
         items: [
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
               color: Colors.black,
