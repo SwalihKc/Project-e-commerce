@@ -64,6 +64,7 @@ flutter:
     - assets/
     - assets/menu.png
     - assets/Plus.png
+    - assets/Mask Group.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

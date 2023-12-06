@@ -276,7 +276,9 @@ class _PaymentPageState extends State<PaymentPage> {
             ],
           ),
         ),
-         SizedBox(
+       
+      ]),
+      bottomNavigationBar:   SizedBox(
               height: height / 13,
               width: width / 1,
               child: ElevatedButton(
@@ -292,7 +294,6 @@ class _PaymentPageState extends State<PaymentPage> {
                   ),
                   onPressed: () {},
                   child:const Center(child: Text("Save Cart",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500),),))),
-      ]),
     ));
   }
 }
