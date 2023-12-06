@@ -13,7 +13,7 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     final List listtile = [
       listtilchanges(
-        Color.fromARGB(255, 228, 234, 238),
+        const Color.fromARGB(255, 228, 234, 238),
       ),
       listtilchanges(Colors.white)
     ];
@@ -21,9 +21,9 @@ class _CartPageState extends State<CartPage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
-        leading: Icon(Icons.arrow_back),
-        title: Padding(
-          padding: const EdgeInsets.only(right: 80),
+        leading: const Icon(Icons.arrow_back),
+        title: const Padding(
+          padding: EdgeInsets.only(right: 80),
           child: Center(
             child: Text(
               "Cart",
@@ -50,7 +50,7 @@ class _CartPageState extends State<CartPage> {
                         elevation: 10,
                         child: Row(
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               width: 8,
                             ),
                             Expanded(
@@ -69,14 +69,14 @@ class _CartPageState extends State<CartPage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
+                                      const Text(
                                         "Men's Til-Day T-Shirt",
                                         style: TextStyle(
                                             fontSize: 13,
                                             color: Colors.black,
                                             fontWeight: FontWeight.w800),
                                       ),
-                                      Text(
+                                      const Text(
                                         'Nike Sportswear',
                                         style: TextStyle(
                                             fontSize: 13,
@@ -84,7 +84,7 @@ class _CartPageState extends State<CartPage> {
                                             fontWeight: FontWeight.w800),
                                       ),
                                      
-                                      Text(
+                                      const Text(
                                         '\$45 (-\$4.00 Tax)',
                                         style: TextStyle(
                                             color: Color.fromARGB(
@@ -93,21 +93,21 @@ class _CartPageState extends State<CartPage> {
                                       ),
                                       Row(
                                         children: [
-                                          Icon(Icons.arrow_drop_down_sharp),
-                                          Text(
+                                          const Icon(Icons.arrow_drop_down_sharp),
+                                          const Text(
                                             "1",
                                             style: TextStyle(
                                                 color: Color.fromARGB(
                                                     255, 111, 106, 106),
                                                 fontSize: 15),
                                           ),
-                                          Icon(Icons.arrow_drop_up_outlined),
-                                          SizedBox(
+                                          const Icon(Icons.arrow_drop_up_outlined),
+                                          const SizedBox(
                                             width: 100,
                                           ),
                                           IconButton(
                                               onPressed: () {},
-                                              icon: Icon(Icons
+                                              icon: const Icon(Icons
                                                   .delete_outline_outlined))
                                         ],
                                       )
@@ -118,7 +118,7 @@ class _CartPageState extends State<CartPage> {
                         )));
               },
               separatorBuilder: (context, index) {
-                return SizedBox(
+                return const SizedBox(
                   height:5,
                 );
               },
@@ -129,7 +129,7 @@ class _CartPageState extends State<CartPage> {
           height: 25,
           width: 370,
           child: ListTile(
-            leading: Text(
+            leading: const Text(
               "Delivery Address",
               style: TextStyle(
                   color: Colors.black,
@@ -137,11 +137,11 @@ class _CartPageState extends State<CartPage> {
                   fontWeight: FontWeight.w600),
             ),
             trailing: IconButton(
-                onPressed: () {}, icon: Icon(Icons.arrow_right_sharp)),
+                onPressed: () {}, icon: const Icon(Icons.arrow_right_sharp)),
           ),
          
         ),
-         SizedBox(height: 20,),
+         const SizedBox(height: 20,),
         SizedBox(
             height: 60,
             width: 370,
@@ -151,7 +151,7 @@ class _CartPageState extends State<CartPage> {
                 width: 70,
                 color: Colors.black87,
               ),
-              title: Column(
+              title: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -164,7 +164,7 @@ class _CartPageState extends State<CartPage> {
                     Text(
                       "MD",
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 220, 207, 207),
+                          color: Color.fromARGB(255, 220, 207, 207),
                           fontSize: 12),
                     )
                   ]),
@@ -182,13 +182,13 @@ class _CartPageState extends State<CartPage> {
             )),
        
         ListTile(
-          leading: Text(
+          leading: const Text(
             "Payment Method",
             style: TextStyle(
                 color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
           ),
           trailing:
-              IconButton(onPressed: () {}, icon: Icon(Icons.arrow_right_sharp)),
+              IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_right_sharp)),
         ),
         
         SizedBox(
@@ -200,7 +200,7 @@ class _CartPageState extends State<CartPage> {
                 width: 70,
                 color: Colors.black87,
               ),
-              title: Column(
+              title: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -213,7 +213,7 @@ class _CartPageState extends State<CartPage> {
                     Text(
                       "12******@@#",
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 220, 207, 207),
+                          color: Color.fromARGB(255, 220, 207, 207),
                           fontSize: 12),
                     )
                   ]),
@@ -230,13 +230,13 @@ class _CartPageState extends State<CartPage> {
               ),
             )),
     
-        Text(
+        const Text(
           "Order info",
           style: TextStyle(
               color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
         ),
      
-        SizedBox(
+        const SizedBox(
           height: 30,width: 370,
           child: ListTile(
             leading: Text(
@@ -251,7 +251,7 @@ class _CartPageState extends State<CartPage> {
           ),
         ),
        
-         SizedBox(
+         const SizedBox(
           height: 30,width: 370,
            child: ListTile(
             leading: Text(
@@ -265,7 +265,7 @@ class _CartPageState extends State<CartPage> {
             ),
                  ),
          ),
-           SizedBox(
+           const SizedBox(
           height: 30,width: 370,
            child: ListTile(
             leading: Text(
